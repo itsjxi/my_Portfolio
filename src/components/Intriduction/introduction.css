@@ -1,0 +1,86 @@
+
+.introdiction{
+    display: flex;
+  min-height: 77vh;
+  margin-top: 6rem;
+ 
+}
+
+.i-left {
+    display: flex;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+  }
+  .i-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .i-name > :nth-child(1) {
+    color: var(--black);
+    font-weight: bold;
+    font-size: 3rem;
+  }
+  .i-name > :nth-child(2) {
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 3rem;
+  }
+  .i-name > span:last-child {
+    font-weight: 100;
+    font-size: 14px;
+    color: var(--gray);
+    margin-top: 10px;
+  }
+
+  .i-left>.i-button {
+    width: 6rem;
+    height: 2rem;
+    flex: 0;
+  }
+
+  .i-icons {
+    flex: 0;
+    display: flex;
+    height: 80px;
+    margin-bottom: 2rem;
+  }
+  .i-icons > a {
+    transform: scale(0.2);
+    width: 60px;
+    height: 100px;
+  }
+
+  .i-right{
+     flex: 1;
+     position: relative;
+     transform: scale(0.8);
+     left: -3rem;
+  }
+  .i-right> img{
+    position: absolute;
+  }
+  .flotingDiv{
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    background: white;
+    box-shadow: var(--boxShadow);
+    border-radius: 10px;
+    align-items: center;
+    width: 40%;
+    height: 20%;
+    box-sizing: border-box;
+    z-index: 10;
+  }
+  .flotingDiv > img{
+   width: 60px;
+
+  }
+  .blur {
+    position: absolute;
+  filter: blur(72px);
+}

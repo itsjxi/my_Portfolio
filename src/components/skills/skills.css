@@ -1,0 +1,32 @@
+.overallSKillDiv{
+    display: flex;
+}
+
+.skill-left{
+    flex: 0.5;
+}
+
+.s-skillrendering{
+    margin: 2em auto;
+    width: 100vw;
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(4, 1fr);
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex: 1.5;
+}
+.s-skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+
+}
+
+.cv-button{
+    width: 10rem;
+    margin-top: 2rem;
+}
+
