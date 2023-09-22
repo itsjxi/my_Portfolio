@@ -46,7 +46,7 @@
     
 }
 
-.h-list > ul > li:hover{
+.h-list li:hover{
     color: var(--orange);
     cursor: pointer;
 }

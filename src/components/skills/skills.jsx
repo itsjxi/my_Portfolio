@@ -12,7 +12,7 @@ export default function Skills(){
 
     return(
         <>
-        <div className="overallSKillDiv">
+        <div className="overallSKillDiv" id = "Skills">
          <div className="skill-left i-name">
                      <span>My Awsome</span><span>Skills..</span>
             <button className="cv-button">Download CV</button>       
