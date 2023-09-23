@@ -11,7 +11,7 @@ export default function Contact(){
     const sendEmail = (e) => {
       e.preventDefault();
   
-      emailjs.sendForm('service_nld2dpm', 'template_t5346w8', form.current, 'GSpf5-RciM723EsF-')
+      emailjs.sendForm('service_nld2dpm', 'template_bw4bwam', form.current, 'GSpf5-RciM723EsF-')
         .then((result) => {
             console.log(result.text);
             setDone(true)
