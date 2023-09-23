@@ -84,3 +84,55 @@
     position: absolute;
   filter: blur(72px);
 }
+
+@media screen and (max-width: 480px) {
+  .introdiction{
+ display: block;
+}
+.i-left{
+  display: block;
+}
+.i-left > button{
+  margin-top: 0.6rem;
+}
+.i-name > :nth-child(1) {
+  color: var(--black);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.i-name > :nth-child(2) {
+  color: var(--orange);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.i-name > span:last-child {
+  font-weight: 100;
+  font-size: 10px;
+  color: var(--gray);
+  margin-top: 10px;
+}
+.i-icons {
+  margin-top: 0.6rem;
+  display: block;
+  height: 80px;
+  margin-bottom: 2rem;
+}
+.i-icons > a {
+  width: 60px;
+  height: 100px;
+}
+.i-icons > a img{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+.i-right>img{
+  display: none;
+}
+.flotingDiv{
+  top: -20rem;
+  left: 13rem
+
+}
+  
+}

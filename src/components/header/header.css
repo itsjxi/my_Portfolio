@@ -75,3 +75,12 @@ button:hover{
     display: flex;
     justify-content: center;
 }
+
+@media screen and (max-width: 480px) {
+    .h-list {
+      display: none;
+    }
+    .h-button{
+        display: none;
+    }
+  }

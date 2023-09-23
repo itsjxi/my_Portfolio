@@ -3,10 +3,11 @@
     align-items: center;
     position: relative;
     margin-top: -7rem;
-    background-color: var(--yellow);
+    background-color: var(--orange);
     width: 100%;
     height: 200px;
     justify-content: center;
+   
   }
   .f-content {
     position: absolute;

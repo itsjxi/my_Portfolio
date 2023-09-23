@@ -4,6 +4,8 @@
 
 .skill-left{
     flex: 0.5;
+    justify-content: center;
+    align-items: center;
 }
 
 .s-skillrendering{
@@ -12,9 +14,9 @@
     display: grid;
     gap: 2em;
     grid-template-columns: repeat(4, 1fr);
-    -webkit-box-pack: center;
     justify-content: center;
     flex: 1.5;
+    place-items: center;
 }
 .s-skill{
     display: flex;
