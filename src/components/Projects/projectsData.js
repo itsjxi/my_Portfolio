@@ -1,6 +1,7 @@
 import gridTable from "../../images/gridTable.png"
 import zepto from "../../images/zepto.png"
-import chillflix from "../../images/chillflix.png"
+import chilflix from "../../images/chilflix.png"
+import dynamicForm from "../../images/dynamicForm.png"
 
 export const projectsData= [
     {
@@ -13,7 +14,7 @@ export const projectsData= [
     },
     {
       id: 2,
-      imageUrl: chillflix,
+      imageUrl: chilflix,
       name: "Chillflix",
       github: "https://github.com/itsjxi/ChillFlix",
       livedemo: "https://chillflix2023.netlify.app/",
@@ -29,10 +30,10 @@ export const projectsData= [
     },
     {
       id: 4,
-      imageUrl: "https://example.com/form.png",
+      imageUrl: dynamicForm,
       name: "Dynamic Form",
-      github: "https://github.com/itsjxi/GridTable",
-      livedemo: "https://yourwebsite.com/dynamicform",
+      github: "https://github.com/itsjxi/Dynamic_Form",
+      livedemo: "https://dynamicform2023.netlify.app/",
       text: "A dynamic form that displays entered details when filled out."
     }
   ];

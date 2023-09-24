@@ -6,6 +6,7 @@ import myImage from "../../images/myImage.png"
 import star from "../../images/star.png"
 import blue from "../../images/blue.webp"
 import crown from "../../images/crown.png"
+import {Link} from "react-scroll"
 // import { FontAwesomeIcon } from "@fortawesome/free-regular-svg-icons"
 // import { faLinkedin } from "@fortawesome/free-regular-svg-icons"
 
@@ -24,7 +25,10 @@ export default function Introcuction(){
                         web applications.
                      </span>
                  </div>
+                 <Link spy={true}  smooth = {true} to='Contact'>
                  <button className="i-button">Hire Me</button>
+                    </Link>
+                 
                  <div className="i-icons">
                     <a href="https://github.com/itsjxi?tab=repositories">
                     <img src={github} alt="" style={{backgroundColor: "orange", borderRadius: "45%"}} />

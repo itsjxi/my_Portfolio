@@ -1,6 +1,7 @@
 import React from "react";
 import "./skills.css"
 import { webSkills } from "./skillData";
+import myResume from "../../images/myResume.pdf"
 
 export default function Skills(){
 
@@ -15,7 +16,7 @@ export default function Skills(){
         <div className="overallSKillDiv" id = "Skills">
          <div className="skill-left i-name">
                      <span>My Awsome</span><span>Skills..</span>
-            <button className="cv-button">Download CV</button>       
+            <a href={myResume} download="Jugal's Resume"><button className="cv-button">Download CV</button></a>       
         </div>   
         <div className="skill-right s-skillrendering">
         {skillRendering}
