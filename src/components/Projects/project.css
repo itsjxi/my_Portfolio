@@ -81,7 +81,7 @@
 @media screen and (max-width: 750px) {
 
   .p-allProjects{
-    margin-top: 2rem;
+    margin-top: 3rem;
     padding: 10px;
     width: 95vw;
   }
@@ -132,10 +132,10 @@
  box-shadow: var(--boxShadow);  
 }
 .p-projectBlock:nth-child(odd){
-  margin-left: 10px;
+  margin-left: 60px;
 }
 .p-projectBlock:nth-child(even){
-  margin-right: 10px;
+  margin-right: 60px;
 }
 
 .p-projectBlock > p{

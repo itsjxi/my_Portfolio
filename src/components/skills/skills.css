@@ -48,7 +48,7 @@
    }
    .skill-left{
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
    }
