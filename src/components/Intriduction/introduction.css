@@ -95,8 +95,8 @@
  display: block;
  margin-top: 1rem;
  width: 95vw;
- height: 250px;
- box-sizing: border-box;
+ min-height: 230px;
+ box-sizing: content-box;
  padding: 10px;
 }
 .i-left{

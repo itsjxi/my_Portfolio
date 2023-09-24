@@ -1,12 +1,9 @@
 .footer {
     display: flex;
     align-items: center;
-    position: relative;
-    margin-top: -7rem;
     background-color: var(--orange);
-    width: 100%;
-    height: 200px;
     justify-content: center;
+    height: 10rem;
    
   }
   .f-content {
@@ -28,9 +25,7 @@
 
   @media screen and (max-width: 750px) {
    .footer{
-    position: static;
-    margin-top: -17rem;
-    height: 300px;
+     margin-top: 1rem;
     align-items: center;
    }
 

@@ -44,7 +44,7 @@
     height: 250px;
     width: 90vw;
     box-sizing: border-box;
-    margin-top: -29rem;
+   
    }
    .skill-left{
     flex-direction: row;
