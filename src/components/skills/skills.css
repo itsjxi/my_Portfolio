@@ -34,7 +34,7 @@
 
 .cv-button{
     width: 10rem;
-    margin-top: 2rem;
+
 }
 
 
@@ -54,12 +54,14 @@
    }
    .skill-left > button{
 margin-top: 0px;
+
    }
    .s-skillrendering{
     gap: 0rem;
-    width: 90vw;
+    width: 90%;
     margin: 0px;
     margin-top: 2rem;
+    grid-template-columns: repeat(4, 1fr);
    }
    .s-skill:hover{
     scale: 1.1;

@@ -134,7 +134,7 @@
   margin-bottom: 2rem;
   padding-top: 1rem;
   position: absolute;
-  top: 8.5rem;
+  top: 10rem;
   left: 7rem
 }
 .i-icons > a {
@@ -165,10 +165,12 @@
  
 }
 .introPara{
-  height: 60px;
+  height: 80px;
   display: block;
   width: 90vw;
   margin-bottom: 1rem;
+
+  padding: 3px;
 }
   
 }
