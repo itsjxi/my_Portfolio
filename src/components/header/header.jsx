@@ -10,11 +10,11 @@ export default function Header(){
         <>
         <div className="h-wrapper">
            <div className="h-left">
-           <img
+           {/* <img
     src=""
     style={{ width: '50px', height: '60px', marginTop: "20px" }}
     alt='Letter J'
-  />
+  /> */}
                 <div className="h-name">Jugal</div>
                 
            </div>

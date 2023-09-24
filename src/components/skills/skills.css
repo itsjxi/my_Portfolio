@@ -36,3 +36,17 @@
     margin-top: 2rem;
 }
 
+
+@media screen and (max-width: 480px) {
+   .overallSKillDiv{
+    display: block;
+   }
+   .skill-left{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+   }
+   .skill-left > button{
+margin-top: 0px;
+   }
+  }

@@ -84,16 +84,25 @@
     position: absolute;
   filter: blur(72px);
 }
+.i-blurrBlue{
+  top: 17rem;
+  left: -9rem,
+}
 
 @media screen and (max-width: 480px) {
   .introdiction{
  display: block;
+ margin-top: 1rem;
 }
 .i-left{
   display: block;
+  width: 100vw;
 }
-.i-left > button{
+.i-left > .i-button{
   margin-top: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .i-name > :nth-child(1) {
   color: var(--black);
@@ -112,10 +121,14 @@
   margin-top: 10px;
 }
 .i-icons {
-  margin-top: 0.6rem;
+  margin-top: 0rem;
   display: block;
   height: 80px;
   margin-bottom: 2rem;
+  padding-top: 1rem;
+  position: absolute;
+  top: 6.2rem;
+  left: 7rem
 }
 .i-icons > a {
   width: 60px;
@@ -130,9 +143,16 @@
   display: none;
 }
 .flotingDiv{
-  top: -20rem;
+  top: -10.5rem;
   left: 13rem
 
+}
+.flotingDiv > span{
+   margin-left: 1rem;
+}
+.i-blurrBlue{
+  top: -1rem;
+ 
 }
   
 }

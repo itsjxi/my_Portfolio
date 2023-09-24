@@ -42,17 +42,15 @@ export default function Introcuction(){
                <FlotingDiv image ={crown} text1="Web" text2="Developer"/>
                <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>
         <div
-          className="blur"
+          className="blur i-blurrBlue"
           style={{
             background: "#C1F5FF",
-            top: "17rem",
             width: "21rem",
             height: "11rem",
-            left: "-9rem",
           }}
         ></div>
          <div
-          className="blur"
+          className="blur i-blurrPink"
           style={{
             background: "pink",
             top: "-10rem",
