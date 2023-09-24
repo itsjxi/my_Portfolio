@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 .p-leftProject{
     display: grid;
@@ -82,6 +83,7 @@
   .p-allProjects{
     margin-top: 2rem;
     padding: 10px;
+    width: 95vw;
   }
   .p-blurrPink{
     top: 10rem;
@@ -109,26 +111,31 @@
      .p-leftProject{
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(2, 1fr);
-      justify-content: center;
+      grid-template-columns: repeat(1, 0.6fr);
       z-index: 1;
-      width: 100vw;
-      border: 1px solid;
+      width: 80%;
+      box-sizing: border-box;
       
       
   }
   
 .p-projectBlock{
-  border: 2px solid var(--orange);
+  border: 5px solid var(--orange);
  display: flex;
  flex-direction: column;
  align-items: center;
  justify-content: space-evenly;
  box-sizing: border-box;
- padding: 5px;
+ padding: 10px;
  padding-bottom: 20px;
  border-radius: 20px;
  box-shadow: var(--boxShadow);  
+}
+.p-projectBlock:nth-child(odd){
+  margin-left: 10px;
+}
+.p-projectBlock:nth-child(even){
+  margin-right: 10px;
 }
 
 .p-projectBlock > p{
@@ -140,7 +147,7 @@
  scale: 1.05;
 }
 .p-projectBlock >img{
-  width: 200px;
+  width: 250px;
   height: 130px;
   border-radius: 10px;
 }

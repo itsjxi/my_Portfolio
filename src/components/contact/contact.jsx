@@ -28,8 +28,6 @@ export default function Contact(){
                     <span>Contact me</span>
                     <div className="blur c-blurrGreen" style={{
                                     background: "lightgreen",
-                                   
-                                    width: "21rem",
                                     height: "11rem",
                                   
                                 }}

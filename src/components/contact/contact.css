@@ -61,12 +61,23 @@ textarea{
 
 .c-blurrGreen{
     left: 50rem;
-    top: 2rem,
+    top: 2rem;
+    width: 21rem
 }
 
 @media screen and (max-width: 480px) {
     .c-blurrGreen{
-        left: 0rem;
-        top: 2rem,
+        left: -5rem;
+        top: 2rem;
+        width: 10rem
+    }
+    .contact-form{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+    .c-right{
+        margin-top: 1rem;
     }
   }

@@ -1,5 +1,6 @@
 .overallSKillDiv{
     display: flex;
+    padding: 2rem;
 }
 
 .skill-left{
@@ -41,15 +42,27 @@
    .overallSKillDiv{
     display: block;
     height: 250px;
-    width: 100vw;
+    width: 90vw;
     box-sizing: border-box;
+    margin-top: -12rem;
    }
    .skill-left{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+
    }
    .skill-left > button{
 margin-top: 0px;
    }
+   .s-skillrendering{
+    gap: 0rem;
+    width: 90vw;
+    margin: 0px;
+    margin-top: 2rem;
+   }
+   .s-skill:hover{
+    scale: 1.1;
+    box-shadow: var(--boxShadow);
+}
   }

@@ -3,7 +3,7 @@
     display: flex;
   min-height: 77vh;
   margin-top: 6rem;
- 
+  padding: 2rem;
 }
 
 .i-left {
@@ -86,18 +86,18 @@
 }
 .i-blurrBlue{
   top: 17rem;
-  left: -9rem,
+  left: -9rem;
+  width: 21rem
 }
 
 @media screen and (max-width: 480px) {
   .introdiction{
  display: block;
  margin-top: 1rem;
- width: 100vw;
+ width: 95vw;
  height: 250px;
- border: 1px solid;
  box-sizing: border-box;
- padding: 20px;
+ padding: 10px;
 }
 .i-left{
   display: block;
@@ -114,12 +114,12 @@
 .i-name > :nth-child(1) {
   color: var(--black);
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .i-name > :nth-child(2) {
   color: var(--orange);
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .i-name > span:last-child {
   font-weight: 100;
@@ -134,7 +134,7 @@
   margin-bottom: 2rem;
   padding-top: 1rem;
   position: absolute;
-  top: 6.5rem;
+  top: 7.5rem;
   left: 7rem
 }
 .i-icons > a {
@@ -150,7 +150,7 @@
   display: none;
 }
 .flotingDiv{
-  top: -18rem;
+  top: -17rem;
   left: 80%
 
 }
@@ -158,7 +158,9 @@
    margin-left: 1rem;
 }
 .i-blurrBlue{
-  top: -2rem;
+  top: -10rem;
+  left: 15rem;
+  width: 15rem;
 
  
 }

@@ -45,7 +45,7 @@ export default function Introcuction(){
           className="blur i-blurrBlue"
           style={{
             background: "#C1F5FF",
-            width: "21rem",
+      
             height: "11rem",
           }}
         ></div>

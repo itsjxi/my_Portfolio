@@ -3,6 +3,10 @@
     height: 10vh;
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background: white;
 
 }
 
@@ -13,6 +17,7 @@
     justify-content: left;
     display: flex;
     gap: 2rem;
+    padding-left: 2rem;
     
 }    
 
@@ -82,5 +87,15 @@ button:hover{
     }
     .h-button{
         display: none;
+    }
+    .h-wrapper{
+        width: 90%;
+    }
+    .h-left{
+        padding-left: 1rem;
+    }
+    .h-toggle{
+        justify-content: end;
+        padding-right: 1rem;
     }
   }
