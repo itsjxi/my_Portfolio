@@ -23,7 +23,7 @@ export default function Contact(){
             setUserEmail('');
             setMessage('');
             setDone(true)
-            alert("Ypur message sent successfully")
+            alert("Message sent successfully")
         }, (error) => {
             console.log(error.text);
         });
