@@ -81,7 +81,7 @@ button:hover{
     justify-content: center;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 750px) {
     .h-list {
       display: none;
     }

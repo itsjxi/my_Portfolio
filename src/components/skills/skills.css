@@ -38,7 +38,7 @@
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 750px) {
    .overallSKillDiv{
     display: block;
     height: 250px;

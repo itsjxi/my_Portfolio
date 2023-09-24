@@ -26,7 +26,7 @@
     justify-content: space-around;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 750px) {
    .footer{
     position: static;
     margin-top: 0px;

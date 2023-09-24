@@ -65,7 +65,7 @@ textarea{
     width: 21rem
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 750px) {
     .c-blurrGreen{
         left: -5rem;
         top: 2rem;

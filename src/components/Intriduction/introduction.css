@@ -90,7 +90,7 @@
   width: 21rem
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 750px) {
   .introdiction{
  display: block;
  margin-top: 1rem;
