@@ -15,7 +15,7 @@ export default function Introcuction(){
              <div className="i-left">
                  <div className="i-name">
                      <span> HYY! I Am</span><span>Jugal Rajput</span>
-                     <span>
+                     <span className="introPara">
                         I am a graduate of NIT Surat and an enthusiastic frontend developer
                         proficient in a wide array of web development technologies. I specialize
                         in JavaScript, React, HTML5, CSS, REST APIs, Git, advanced JavaScript concepts,

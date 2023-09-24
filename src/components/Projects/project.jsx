@@ -23,13 +23,10 @@ return(
      <>
      <div className="p-allProjects" id = "Projects">
      <div
-          className="blur"
+          className="blur p-blurrPink"
           style={{
             background: "pink",
-            top: "-5rem",
-            width: "29rem",
-            height: "11rem",
-            left: "45rem",
+          
           }}
         ></div>
      <div className="p-rightProject">

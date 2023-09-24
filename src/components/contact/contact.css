@@ -58,3 +58,15 @@ textarea{
     cursor: pointer;
     border: 1px solid var(--orange);
 }
+
+.c-blurrGreen{
+    left: 50rem;
+    top: 2rem,
+}
+
+@media screen and (max-width: 480px) {
+    .c-blurrGreen{
+        left: 0rem;
+        top: 2rem,
+    }
+  }

@@ -93,10 +93,17 @@
   .introdiction{
  display: block;
  margin-top: 1rem;
+ width: 100vw;
+ height: 250px;
+ border: 1px solid;
+ box-sizing: border-box;
+ padding: 20px;
 }
 .i-left{
   display: block;
   width: 100vw;
+  height: 250px;
+  box-sizing: border-box;
 }
 .i-left > .i-button{
   margin-top: 0.6rem;
@@ -127,7 +134,7 @@
   margin-bottom: 2rem;
   padding-top: 1rem;
   position: absolute;
-  top: 6.2rem;
+  top: 6.5rem;
   left: 7rem
 }
 .i-icons > a {
@@ -143,16 +150,23 @@
   display: none;
 }
 .flotingDiv{
-  top: -10.5rem;
-  left: 13rem
+  top: -18rem;
+  left: 80%
 
 }
 .flotingDiv > span{
    margin-left: 1rem;
 }
 .i-blurrBlue{
-  top: -1rem;
+  top: -2rem;
+
  
+}
+.introPara{
+  height: 60px;
+  display: block;
+  width: 90vw;
+
 }
   
 }

@@ -26,12 +26,12 @@ export default function Contact(){
                 <div className="awesome i-name">
                     <span>Get in touch</span>
                     <span>Contact me</span>
-                    <div className="blur" style={{
+                    <div className="blur c-blurrGreen" style={{
                                     background: "lightgreen",
-                                    top: "2rem",
+                                   
                                     width: "21rem",
                                     height: "11rem",
-                                    left: "50rem",
+                                  
                                 }}
                     ></div>
                 </div>

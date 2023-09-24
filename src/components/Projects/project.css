@@ -26,9 +26,7 @@
    padding: 10px;
    padding-bottom: 20px;
    border-radius: 20px;
-   box-shadow: var(--boxShadow);
-   
-   
+   box-shadow: var(--boxShadow);  
 }
 
 .p-projectBlock > p{
@@ -71,4 +69,81 @@
 .p-demoButtons > button:hover > img{
      background-color: var(--orange);
      border-radius: 50%;
+}
+.p-blurrPink{
+  top: -5rem;
+  left: 45rem;
+  width: 29rem;
+  height: 11rem
+}
+
+@media screen and (max-width: 480px) {
+
+  .p-allProjects{
+    margin-top: 2rem;
+    padding: 10px;
+  }
+  .p-blurrPink{
+    top: 10rem;
+    left: 0rem;
+    width: 10rem;
+    height: 11rem
+  }
+  .p-rightProject{
+    flex: 1;
+    margin: 2rem;
+   }
+   
+   .p-rightProject > :nth-child(1) {
+       color: var(--black);
+       font-weight: bold;
+       font-size: 2rem;
+       margin-right: 1rem;
+     }
+     .p-rightProject > :nth-child(2) {
+       color: var(--orange);
+       font-weight: bold;
+       font-size: 2rem;
+     }
+
+     .p-leftProject{
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      z-index: 1;
+      width: 100vw;
+      border: 1px solid;
+      
+      
+  }
+  
+.p-projectBlock{
+  border: 2px solid var(--orange);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-evenly;
+ box-sizing: border-box;
+ padding: 5px;
+ padding-bottom: 20px;
+ border-radius: 20px;
+ box-shadow: var(--boxShadow);  
+}
+
+.p-projectBlock > p{
+  font-weight: 100;
+  font-size: 14px;
+  color: var(--gray);
+}
+.p-projectBlock:hover{
+ scale: 1.05;
+}
+.p-projectBlock >img{
+  width: 200px;
+  height: 130px;
+  border-radius: 10px;
+}
+  
+  
 }

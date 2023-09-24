@@ -40,6 +40,9 @@
 @media screen and (max-width: 480px) {
    .overallSKillDiv{
     display: block;
+    height: 250px;
+    width: 100vw;
+    box-sizing: border-box;
    }
    .skill-left{
     flex-direction: row;
