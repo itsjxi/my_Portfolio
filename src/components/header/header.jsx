@@ -37,7 +37,7 @@ export default function Header(){
                 </ul>
             </div>
             <Link spy={true}  smooth = {true} to='Contact'>
-            <button className="h-button">Contact Us</button>
+            <button className="h-button">Contact Me</button>
                     </Link>
             
             <div className="h-toggle">
