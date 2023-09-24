@@ -29,8 +29,9 @@
   @media screen and (max-width: 750px) {
    .footer{
     position: static;
-    margin-top: 0px;
-
+    margin-top: -17rem;
+    height: 300px;
+    align-items: center;
    }
 
   }
