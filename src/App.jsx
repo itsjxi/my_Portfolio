@@ -8,17 +8,29 @@ import Skills from './components/skills/skills'
 import Projects from './components/Projects/project'
 import Contact from './components/contact/contact'
 import Footer from './components/footer/footer'
+
+import { themeContext } from './context'
+import { useContext } from 'react'
+
 function App() {
   const [count, setCount] = useState(0)
-
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode
   return (
     <>
+    <div className='App' 
+    style={{
+      background: darkMode ? "black" : "",
+      color:      darkMode ? "white" : "",
+    }}>
     <Header/> 
     <Introcuction/>
     <Skills/>
     <Projects/>
     <Contact/>
     <Footer/>
+   
+    </div>
     </>
   )
 }

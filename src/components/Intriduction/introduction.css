@@ -68,6 +68,7 @@
     display: flex;
     justify-content: space-evenly;
     background: white;
+    color: black;
     box-shadow: var(--boxShadow);
     border-radius: 10px;
     align-items: center;
@@ -75,9 +76,26 @@
     height: 20%;
     box-sizing: border-box;
     z-index: 10;
+    transform: translate(-50%, -50%);
+    animation: rotateAnimation 7s linear infinite;
   }
+  
+  @keyframes rotateAnimation {
+    0% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    45%,50% {
+      transform: translateX(50%) rotate(360deg);
+    }
+    95%,100% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+  }
+
+
   .flotingDiv > img{
    width: 60px;
+
 
   }
   .blur {
@@ -150,12 +168,16 @@
   display: none;
 }
 .flotingDiv{
-  top: -17rem;
-  left: 80%
+  top: -18rem;
+  left:60%;
+  width: 180px;
+  height: 60px;
+  
 
 }
 .flotingDiv > span{
    margin-left: 1rem;
+  
 }
 .i-blurrBlue{
   top: -10rem;
