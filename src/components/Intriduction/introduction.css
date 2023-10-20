@@ -113,9 +113,10 @@
  display: block;
  margin-top: 1rem;
  width: 95vw;
- min-height: 230px;
+ min-height: 340px;
  box-sizing: content-box;
  padding: 10px;
+
 }
 .i-left{
   display: block;
@@ -195,7 +196,14 @@
   padding: 3px;
 }
 .intro-button{
-  display: flex;
+  display: flex ;
+
+  margin-top: 130px;
+  
+}
+.i-icons{
+ top: 290px
+ 
 }
   
 }
