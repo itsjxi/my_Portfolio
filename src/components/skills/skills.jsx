@@ -6,7 +6,7 @@ import myResume from "../../images/myResume.pdf"
 export default function Skills(){
 
     const skillRendering = webSkills.map((item)=>{
-        return <div className="s-skill"><img src = {item.imageUrl} alt= {item.skillName} style={{width: "50px"}}/>
+        return <div className="s-skill"><img src = {item.imageUrl} alt= {item.skillName} style={{width: "50px" ,color: "blue"}}/>
                <h3>{item.skillName}</h3>
                </div>
     })

@@ -3,8 +3,8 @@
   --yellow: #F5C32C;
   --white:  white;
     --orange : #FCA61F;
-    --black : #242D49;
-    --gray : #788097;
+    --black : rgb(6, 70, 97);
+    --gray : #2451d9;
     --blueCard : #DDF8FE;
     --purple: rgb(238 210 255);
     --boxShadow : 0px 19px 60px rgb(0 0 0 / 8%);

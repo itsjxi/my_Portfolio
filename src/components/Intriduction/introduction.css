@@ -191,8 +191,11 @@
   display: block;
   width: 90vw;
   margin-bottom: 1rem;
-
+  box-sizing: content-box;
   padding: 3px;
+}
+.intro-button{
+  display: flex;
 }
   
 }

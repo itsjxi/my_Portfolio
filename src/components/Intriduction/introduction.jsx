@@ -17,14 +17,16 @@ export default function Introcuction(){
                  <div className="i-name">
                      <span> HYY! I Am</span><span>Jugal Rajput</span>
                      <span className="introPara">
-                        I am a graduate of NIT Surat and an enthusiastic frontend developer
-                        proficient in a wide array of web development technologies. I specialize
-                        in JavaScript, React, HTML5, CSS, REST APIs, Git, advanced JavaScript concepts,
-                        Redux, and responsive web design. I am adept at creating intuitive user
-                        interfaces and collaborating with cross-functional teams to deliver exceptional
-                        web applications.
+                     <p>👋 Hi, I'm Jugal, a graduate from NIT Surat. I have a strong passion for web development and front-end technologies. My mission is to craft outstanding web experiences that leave a lasting impression. 🌟🚀</p>
+
+           <strong>🚀 Skills Constellation:</strong>
+
+<p>✅ I possess strong proficiency in front-end technologies, including JavaScript, React.js, HTML, CSS, Redux, JASON, APIs, Ajax. These skills enable me to create captivating and user-friendly web interfaces.</p>
+
+<p>🌠 Let's collaborate, code, and embark on a journey to create web experiences that are truly out of this world. Feel free to reach out – together, we'll write a new chapter in the cosmic web. 🚀🌌</p>
                      </span>
                  </div>
+                 <div className="intro-button">
                  <Link spy={true}  smooth = {true} to='Contact'>
                  <button className="i-button">Hire Me</button>
                     </Link>
@@ -38,11 +40,12 @@ export default function Introcuction(){
                     </a>
                     
                  </div>
+                 </div>
              </div>
              <div className="i-right">
              <img src={blue} alt="background" style={{width: "600px", height:"400px", left: "50px"}} />
              <img src={star} alt="background" style={{width: "600px", height:"500px", left: "80px"}} />
-                 <img src= {myImage} style={{ left: "200px", top:"50px"}}/>
+                 <img src= {myImage} style={{ left: "100px", top:"50px"}}/>
                <FlotingDiv image ={crown} text1="Web" text2="Developer"/>
                <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>
         <div

@@ -34,6 +34,11 @@ export const webSkills = [
         skillName: 'GitHub',
         imageUrl: 'https://dineshrout.netlify.app/icons/github.svg'
       },
+      {
+        id: 8,
+        skillName: 'API',
+        imageUrl: 'https://cdn-icons-png.flaticon.com/512/3234/3234207.png'
+      }
   ];
   
   
