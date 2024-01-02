@@ -17,7 +17,7 @@ export const projectsData= [
       id: 2,
       imageUrl: gridTable,
       name: "Grid Table",
-      github: "https://github.com/yourusername/grid-table",
+      github: "https://github.com/itsjxi/GridTable",
       livedemo: "https://gridtable2023.netlify.app/",
       text: "A table with CRUD functionality, sorting, and pagination."
     },

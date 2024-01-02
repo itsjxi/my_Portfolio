@@ -12,8 +12,8 @@ export default function Projects(){
                    <h3 style={{textAlign: "left", width: "100%", marginBottom:"0px"}}>{item.name}</h3>
                    <p>{item.text}</p>
                    <div className="p-demoButtons">
-                       <a href={item.github}><button>Github <img src={github} alt=""  style={{width:"10px", height:"10px"}}/> </button></a>
-                       <a href={item.livedemo}><button>Demo</button></a>
+                       <a target="_blank" rel="noopener noreferrer" href={item.github}><button>Github <img src={github} alt=""  style={{width:"10px", height:"10px"}}/> </button></a>
+                       <a target="_blank" rel="noopener noreferrer" href={item.livedemo}><button>Demo</button></a>
                    </div>
 
               </div>
