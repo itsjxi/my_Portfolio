@@ -15,7 +15,7 @@ export default function Introcuction(){
         <div className="introdiction">
              <div className="i-left">
                  <div className="i-name">
-                     <span> HYY! I Am</span><span>Jugal Rajput</span>
+                     <span> This is....</span><span>Jugal Rajput</span>
                      <span className="introPara">
                      <p>👋 Hi, I'm Jugal, a graduate from NIT Surat. I have a strong passion for web development and front-end technologies. My mission is to craft outstanding web experiences that leave a lasting impression. 🌟🚀</p>
 
@@ -32,10 +32,10 @@ export default function Introcuction(){
                     </Link>
                  
                  <div className="i-icons">
-                    <a href="https://github.com/itsjxi?tab=repositories">
+                    <a target="_blank" rel="noopener noreferrer"  href="https://github.com/itsjxi?tab=repositories">
                     <img src={github} alt="" style={{backgroundColor: "orange", borderRadius: "45%"}} />
                     </a>
-                    <a href="https://www.linkedin.com/in/jugal-rajput-39bbbb144/">
+                    <a target="_blank" rel="noopener noreferrer"  href="https://www.linkedin.com/in/jugal-rajput-39bbbb144/">
                     <img src={linkedIn} alt="" />
                     </a>
                     
@@ -44,7 +44,7 @@ export default function Introcuction(){
              </div>
              <div className="i-right">
              <img src={blue} alt="background" style={{width: "600px", height:"400px", left: "50px"}} />
-             <img src={star} alt="background" style={{width: "600px", height:"500px", left: "80px"}} />
+             {/* <img src={star} alt="background" style={{width: "600px", height:"500px", left: "80px"}} /> */}
                  <img src= {myImage} style={{ left: "100px", top:"50px"}}/>
                <FlotingDiv image ={crown} text1="Web" text2="Developer"/>
                <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>

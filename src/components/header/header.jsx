@@ -31,8 +31,6 @@ export default function Header(){
                     <li>Skills</li>
                     </Link>
                     
-                    <li>Portfolio</li>
-                    
                     <li>Experience</li>
                 </ul>
             </div>

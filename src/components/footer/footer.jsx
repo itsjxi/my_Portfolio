@@ -11,8 +11,8 @@ export default function Footer(){
         <div className="f-content">
             <span>jugalrajput10@gmail.com</span>
             <div className="f-icon">
-            <Github color="white" size= "3rem"/>
-            <Linkedin color="white" size= "3rem"/>
+          <a target="_blank" rel="noopener noreferrer"  href="https://github.com/itsjxi"> <Github color="white" size= "3rem"/></a>
+          <a target="_blank" rel="noopener noreferrer"  href="https://www.linkedin.com/in/jugal-rajput-39bbbb144/"> <Linkedin color="white" size= "3rem"/></a> 
             </div>
         </div>
     </div>
