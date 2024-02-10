@@ -3,6 +3,7 @@ import zepto from "../../images/zepto.png"
 import chilflix from "../../images/chilflix.png"
 import dynamicForm from "../../images/dynamicForm.png"
 import spotifyPro from "../../images/spotifyPro.png"
+import hulkApp from "../../images/hulkApp.png"
 
 export const projectsData= [
   {
@@ -39,10 +40,10 @@ export const projectsData= [
     },
     {
       id: 5,
-      imageUrl: dynamicForm,
-      name: "Dynamic Form",
-      github: "https://github.com/itsjxi/Dynamic_Form",
-      livedemo: "https://dynamicform2023.netlify.app/",
-      text: "A dynamic form that displays entered details when filled out."
+      imageUrl: hulkApp,
+      name: "Shopping App",
+      github: "https://github.com/itsjxi/HulkApps23",
+      livedemo: "https://hulkappecoomerce.netlify.app/",
+      text: "A website with item selcting based on color and size and cart functionality."
     }
   ];
