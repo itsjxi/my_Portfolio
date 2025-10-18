@@ -1,0 +1,12 @@
+@import './variables.css';
+@import './base.css';
+@import './layout.css';
+@import './components.css';
+@import '../components/sidebar/sidebar.css';
+@import '../components/header/header.css';
+@import '../components/footer/footer.css';
+@import '../components/sections/home.css';
+@import '../components/sections/experience.css';
+@import '../components/sections/projects.css';
+@import '../components/sections/skills.css';
+@import '../components/sections/contact.css';

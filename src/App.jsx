@@ -1,38 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from './components/header/header'
-import Introcuction from './components/Intriduction/introduction'
-import Skills from './components/skills/skills'
-import Projects from './components/Projects/project'
-import Contact from './components/contact/contact'
-import Footer from './components/footer/footer'
-
-import { themeContext } from './context'
-import { useContext } from 'react'
+import React, { useState } from 'react';
+import DashboardLayout from './components/layout/DashboardLayout';
+import Home from './components/sections/Home';
+import Projects from './components/sections/Projects';
+import Skills from './components/sections/Skills';
+import Experience from './components/sections/Experience';
+import Contact from './components/sections/Contact';
+import './styles/index.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode
+  const [activeSection, setActiveSection] = useState('home');
+
+  const renderContent = () => {
+    switch (activeSection) {
+      case 'home':
+        return <Home />;
+      case 'projects':
+        return <Projects />;
+      case 'skills':
+        return <Skills />;
+      case 'experience':
+        return <Experience />;
+      case 'contact':
+        return <Contact />;
+      default:
+        return <Home />;
+    }
+  };
+
   return (
-    <>
-    <div className='App' 
-    style={{
-      background: darkMode ? "black" : "",
-      color:      darkMode ? "white" : "",
-    }}>
-    <Header/> 
-    <Introcuction/>
-    <Skills/>
-    <Projects/>
-    <Contact/>
-    <Footer/>
-   
-    </div>
-    </>
-  )
+    <DashboardLayout activeSection={activeSection} setActiveSection={setActiveSection}>
+      {renderContent()}
+    </DashboardLayout>
+  );
 }
 
-export default App
+export default App;

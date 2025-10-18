@@ -1,22 +1,33 @@
-import React from "react";
-import "./footer.css"
-import Github from "@iconscout/react-unicons/icons/uil-github"
-import Linkedin from "@iconscout/react-unicons/icons/uil-linkedin"
-import wave from "../../images/wave.png"
+import React from 'react';
 
-export default function Footer(){
-   return(
-    <div className="footer">
-      
-        <div className="f-content">
-            <span>jugalrajput10@gmail.com</span>
-            <div className="f-icon">
-          <a target="_blank" rel="noopener noreferrer"  href="https://github.com/itsjxi"> <Github color="white" size= "3rem"/></a>
-          <a target="_blank" rel="noopener noreferrer"  href="https://www.linkedin.com/in/jugal-rajput-39bbbb144/"> <Linkedin color="white" size= "3rem"/></a> 
-            </div>
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <p className="footer-text">
+          © 2024 Jugal Rajput. Built with React & ❤️
+        </p>
+        <div className="footer-links">
+          <a 
+            href="https://github.com/itsjxi" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
+            GitHub
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/jugal-rajput-39bbbb144/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn btn-outline"
+          >
+            LinkedIn
+          </a>
         </div>
-    </div>
-   )
+      </div>
+    </footer>
+  );
+};
 
-
-}
+export default Footer;
