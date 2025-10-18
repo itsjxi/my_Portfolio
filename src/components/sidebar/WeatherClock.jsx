@@ -51,7 +51,7 @@ const WeatherClock = ({ collapsed }) => {
   };
 
   const applyWeatherTheme = (weatherData) => {
-    if (!weatherThemeEnabled || selectedTheme !== 'auto') return;
+    if (!weatherThemeEnabled) return;
     
     const condition = weatherData.weather[0].main.toLowerCase();
     
@@ -71,27 +71,14 @@ const WeatherClock = ({ collapsed }) => {
     }
   };
 
-  const handleThemeSelect = (theme) => {
-    setSelectedTheme(theme);
-    setShowThemeDropdown(false);
-    
-    if (theme === 'auto' && weather) {
-      applyWeatherTheme(weather);
-    } else {
-      applyTheme(theme);
-    }
-  };
-
   const toggleWeatherTheme = () => {
     setWeatherThemeEnabled(!weatherThemeEnabled);
     if (weatherThemeEnabled) {
       // Remove weather themes when disabled
       applyTheme('auto');
-    } else if (selectedTheme === 'auto' && weather) {
+    } else if (weather) {
       // Apply weather theme when enabled
       applyWeatherTheme(weather);
-    } else {
-      applyTheme(selectedTheme);
     }
   };
 
@@ -104,7 +91,6 @@ const WeatherClock = ({ collapsed }) => {
         const data = await response.json();
         setWeather(data);
         setLocation(data.name);
-        applyWeatherTheme(data);
       } else {
         fetchWeatherByCity('New Delhi');
       }
@@ -123,7 +109,6 @@ const WeatherClock = ({ collapsed }) => {
         const data = await response.json();
         setWeather(data);
         setLocation(data.name);
-        applyWeatherTheme(data);
       } else {
         // Fallback mock data
         const mockData = {
@@ -132,7 +117,6 @@ const WeatherClock = ({ collapsed }) => {
           name: city
         };
         setWeather(mockData);
-        applyWeatherTheme(mockData);
       }
     } catch (error) {
       // Fallback mock data
@@ -142,7 +126,6 @@ const WeatherClock = ({ collapsed }) => {
         name: city
       };
       setWeather(mockData);
-      applyWeatherTheme(mockData);
     }
     setLoading(false);
   };

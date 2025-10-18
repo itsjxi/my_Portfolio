@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DashboardLayout from './components/layout/DashboardLayout';
 import Home from './components/sections/Home';
 import Projects from './components/sections/Projects';
@@ -9,6 +9,11 @@ import './styles/index.css';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    // Set initial theme to light
+    document.documentElement.setAttribute('data-theme', 'light');
+  }, []);
 
   const renderContent = () => {
     switch (activeSection) {
