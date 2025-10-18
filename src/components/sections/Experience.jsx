@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { experienceData } from '../experience/experienceData';
+import { experienceData } from '../experience/experienceData.js';
 
 const Experience = () => {
   const [activeTab, setActiveTab] = useState(0);

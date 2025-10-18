@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { projectsData } from '../Projects/projectsData';
-import TechIcon from '../shared/TechIcon';
+import { projectsData } from '../Projects/projectsData.js';
+import TechIcon from '../shared/TechIcon.jsx';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(0);

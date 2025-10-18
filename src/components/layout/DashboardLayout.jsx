@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../sidebar/Sidebar';
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
+import Sidebar from '../sidebar/Sidebar.jsx';
+import Header from '../header/Header.jsx';
+import Footer from '../footer/Footer.jsx';
 
 const DashboardLayout = ({ children, activeSection, setActiveSection }) => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);

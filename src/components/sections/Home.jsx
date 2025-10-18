@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { initScrollAnimations } from '../../utils/scrollAnimations';
+import { initScrollAnimations } from '../../utils/scrollAnimations.js';
 import './home.css';
 
 const Home = () => {
