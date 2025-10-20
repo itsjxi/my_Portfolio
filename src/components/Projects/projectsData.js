@@ -27,7 +27,7 @@ export const projectsData = [
   },
   {
     id: 3,
-    title: "Netflix Clone - ChilFlix",
+    title: "ChilFlix - Movie Site",
     description: "Full-stack Netflix clone with user authentication, movie streaming, and personalized recommendations.",
     longDescription: "A complete Netflix clone featuring user authentication, movie browsing, watchlist management, and streaming capabilities with a modern UI.",
     tech: ["React", "JavaScript", "HTML", "CSS", "Redux"],
@@ -40,11 +40,11 @@ export const projectsData = [
   },
   {
     id: 4,
-    title: "Spotify Pro Clone",
+    title: "Vibe Music",
     description: "Music streaming application with playlist management, search functionality, and audio controls.",
     longDescription: "A Spotify-inspired music streaming app with advanced playlist management, music discovery, and high-quality audio streaming.",
     tech: ["React", "Spotify API", "CSS3", "JavaScript"],
-    image: "/images/spotifyPro.png",
+    image: "/images/vibeMusic.png",
     github: "https://github.com/itsjxi/SpotifyClone023",
     demo: "https://musicappspotify023.netlify.app/",
     category: "Web App",
