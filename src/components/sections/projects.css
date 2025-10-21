@@ -764,7 +764,7 @@
   
   .project-navigation {
     position: static;
-    background: rgba(0, 0, 0, 0.8);
+    /* background: rgba(0, 0, 0, 0.8); */
     color: white;
     margin-top: var(--spacing-sm);
     justify-content: space-between;
@@ -775,7 +775,7 @@
   }
   
   .project-navigation .nav-btn-compact {
-    background: transparent;
+    /* background: transparent; */
     border: 1px solid rgba(255, 255, 255, 0.3);
     flex: 1;
     min-width: auto;
@@ -786,11 +786,11 @@
   }
   
   .project-navigation .nav-dot-compact {
-    background: rgba(255, 255, 255, 0.5);
+    /* background: rgba(255, 255, 255, 0.5); */
   }
   
   .project-navigation .nav-dot-compact.active {
-    background: white;
+    /* background: black; */
   }
 }
 

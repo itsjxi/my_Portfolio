@@ -3,6 +3,9 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  background: white;
+  margin-bottom: 20px;
+  padding-top: 10px;
 }
 
 .footer-text {
