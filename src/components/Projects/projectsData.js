@@ -28,13 +28,13 @@ export const projectsData = [
   {
     id: 3,
     title: "ChilFlix - Movie Site",
-    description: "Full-stack Netflix clone with user authentication, movie streaming, and personalized recommendations.",
-    longDescription: "A complete Netflix clone featuring user authentication, movie browsing, watchlist management, and streaming capabilities with a modern UI.",
+    description: "A front-end movie rating app with interactive UI, watchlist feature, and smooth user experience.",
+    longDescription: "ChilFlix is a responsive movie rating application built using React. It allows users to browse movies, rate them, and manage a personal watchlist. The app features a clean and interactive UI for a smooth user experience.",
     tech: ["React", "JavaScript", "HTML", "CSS", "Redux"],
     image: "/images/chilflix.png",
     github: "https://github.com/itsjxi/ChillFlix",
     demo: "https://chillflix2023.netlify.app/",
-    category: "Full Stack",
+    category: "Web App",
     featured: false,
     impact: "Complete streaming platform"
   },
