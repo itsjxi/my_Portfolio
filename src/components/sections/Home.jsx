@@ -83,10 +83,10 @@ const Home = () => {
             
             <div className="floating-elements">
               <div className="tech-orb react">⚛️</div>
-              <div className="tech-orb vue">💚</div>
+              <div className="tech-orb vue">💜</div>
               <div className="tech-orb js">🟨</div>
               <div className="tech-orb css">🎨</div>
-              <div className="tech-orb node">🟢</div>
+              <div className="tech-orb node">🟣</div>
               <div className="tech-orb git">🔧</div>
             </div>
             
