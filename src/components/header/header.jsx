@@ -6,15 +6,14 @@ const Header = ({ onToggleSidebar, onToggleMobileMenu, activeSection }) => {
   const [selectedWeatherTheme, setSelectedWeatherTheme] = useState('auto');
 
   const themeOptions = [
-    { value: 'auto', label: 'Auto (Weather)', icon: '🌤️' },
+    { value: 'light', label: 'Light', icon: '☀️' },
+    { value: 'dark', label: 'Dark', icon: '🌙' },
     { value: 'sunny', label: 'Sunny', icon: '☀️' },
     { value: 'cloudy', label: 'Cloudy', icon: '☁️' },
     { value: 'rainy', label: 'Rainy', icon: '🌧️' },
     { value: 'snowy', label: 'Snowy', icon: '❄️' },
     { value: 'stormy', label: 'Stormy', icon: '⛈️' },
-    { value: 'misty', label: 'Misty', icon: '🌫️' },
-    { value: 'light', label: 'Light', icon: '☀️' },
-    { value: 'dark', label: 'Dark', icon: '🌙' }
+    { value: 'misty', label: 'Misty', icon: '🌫️' }
   ];
 
   const toggleTheme = () => {
@@ -25,13 +24,18 @@ const Header = ({ onToggleSidebar, onToggleMobileMenu, activeSection }) => {
 
   const applyTheme = (themeType) => {
     const body = document.body;
+    const root = document.documentElement;
+    
+    // Remove all theme classes
     body.classList.remove('theme-sunny', 'theme-cloudy', 'theme-rainy', 'theme-snowy', 'theme-stormy', 'theme-misty');
+    root.classList.remove('theme-sunny', 'theme-cloudy', 'theme-rainy', 'theme-snowy', 'theme-stormy', 'theme-misty');
     
     if (themeType === 'light' || themeType === 'dark') {
       document.documentElement.setAttribute('data-theme', themeType);
       setTheme(themeType);
-    } else if (themeType !== 'auto') {
-      body.classList.add(`theme-${themeType}`);
+    } else {
+      // Apply weather theme to root element
+      root.classList.add(`theme-${themeType}`);
       document.documentElement.removeAttribute('data-theme');
     }
   };
