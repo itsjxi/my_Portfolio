@@ -15,6 +15,11 @@ const WeatherClock = ({ collapsed }) => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    // Auto-request location permission on mount
+    getCurrentLocation();
+  }, []);
+
   const getCurrentLocation = () => {
     setLoading(true);
     setError('');
