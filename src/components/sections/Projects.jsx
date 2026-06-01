@@ -1,168 +1,144 @@
-import React, { useState, useEffect } from 'react';
-import { projectsData } from '../Projects/projectsData.js';
-import TechIcon from '../shared/TechIcon.jsx';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Navigation, Autoplay } from 'swiper/modules';
+import { ExternalLink, Code2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { PROJECTS } from '../../data/content.js';
+import { useReveal } from '../../hooks/useReveal.js';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import './Projects.css';
 
-const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(0);
-  const [filter, setFilter] = useState('all');
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
-
-  const categories = ['all', 'Web App', 'Dashboard', 'Full Stack', 'Tool', 'Mobile App'];
-  
-  const filteredProjects = filter === 'all' 
-    ? projectsData 
-    : projectsData.filter(project => project.category === filter);
-
-  useEffect(() => {
-    if (isAutoPlay && filteredProjects.length > 1) {
-      const interval = setInterval(() => {
-        setSelectedProject(prev => (prev + 1) % filteredProjects.length);
-      }, 4000);
-      return () => clearInterval(interval);
-    }
-  }, [isAutoPlay, filteredProjects.length]);
-
-  const handleProjectSelect = (index) => {
-    setSelectedProject(index);
-    setIsAutoPlay(false);
-  };
-
-  const currentProject = filteredProjects[selectedProject];
+export default function Projects() {
+  const ref = useReveal();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef(null);
+  const active = PROJECTS[activeIndex];
 
   return (
-    <div className="projects-section">
-      <div className="projects-showcase">
-        <div className="projects-sidebar">
-          <div className="sidebar-header">
-            <h4>All Projects</h4>
-            <button 
-              onClick={() => setIsAutoPlay(!isAutoPlay)}
-              className={`autoplay-btn ${isAutoPlay ? 'active' : ''}`}
-            >
-              {isAutoPlay ? '⏸️' : '▶️'}
-            </button>
-          </div>
-          
-          <div className="projects-list">
-            {filteredProjects.map((project, index) => (
-              <div
-                key={project.id}
-                onClick={() => handleProjectSelect(index)}
-                className={`project-item ${selectedProject === index ? 'active' : ''}`}
-              >
-                <div className="item-image">
-                  <img src={project.image} alt={project.title} />
-                </div>
-                <div className="item-content">
-                  <h5 className="item-title">{project.title}</h5>
-                  <p className="item-category">{project.category}</p>
-                  <div className="item-tech">
-                    {project.tech.slice(0, 2).map((tech, techIndex) => (
-                      <span key={techIndex} className="tech-pill">{tech}</span>
-                    ))}
-                    {project.tech.length > 2 && (
-                      <span className="tech-more">+{project.tech.length - 2}</span>
-                    )}
-                  </div>
-                </div>
-                <div className="item-indicator"></div>
-              </div>
-            ))}
-          </div>
-        </div>
+    <section id="projects" className="section projects-section">
+      <div ref={ref} className="reveal-up">
+        <p className="section-eyebrow">Projects</p>
+        <h2 className="section-title">Selected work</h2>
+        <p className="section-subtitle">
+          Side projects and experiments — each one a lesson in architecture, performance, and craft.
+        </p>
+      </div>
 
-        <div className="project-preview">
-          {currentProject && (
-            <>
-              <div className="project-top">
-                <div className="project-image-container">
-                  <img 
-                    src={currentProject.image} 
-                    alt={currentProject.title}
-                    className="project-preview-image"
-                  />
-                  <div className="image-overlay">
-                    <div className="project-badges">
-                      <span className="category-badge">{currentProject.category}</span>
-                      {currentProject.featured && (
-                        <span className="featured-badge">⭐ Featured</span>
-                      )}
-                    </div>
-                    <div className="project-actions">
-                      <a 
-                        href={currentProject.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="action-btn github-btn"
-                      >
-                        <span>📂</span> Code
+      {/* 3D Carousel */}
+      <div className="carousel-container">
+        <Swiper
+          modules={[EffectCoverflow, Navigation, Autoplay]}
+          effect="coverflow"
+          grabCursor
+          centeredSlides
+          slidesPerView="auto"
+          loop
+          speed={800}
+          autoplay={{ delay: 4000, disableOnInteraction: true, pauseOnMouseEnter: true }}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 200,
+            modifier: 2,
+            slideShadows: false,
+          }}
+          onSwiper={(swiper) => { swiperRef.current = swiper; }}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          className="projects-swiper"
+        >
+          {PROJECTS.map((project, i) => (
+            <SwiperSlide key={project.id} className="project-slide">
+              <div className="slide-card">
+                <div className="slide-image-wrap">
+                  <img src={project.image} alt={project.title} className="slide-image" />
+                  <div className="slide-overlay">
+                    <span className="slide-number">{String(i + 1).padStart(2, '0')}</span>
+                    <div className="slide-actions">
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer" className="slide-action-btn" data-cursor>
+                        <ExternalLink size={14} />
+                        <span>Live</span>
                       </a>
-                      <a 
-                        href={currentProject.demo} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="action-btn demo-btn"
-                      >
-                        <span>🚀</span> Live Demo
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="slide-action-btn ghost" data-cursor>
+                        <Code2 size={14} />
+                        <span>Code</span>
                       </a>
                     </div>
                   </div>
-                </div>
-                
-                <div className="project-details">
-                  <div className="project-header">
-                    <h3 className="project-title">{currentProject.title}</h3>
-                    <div className="project-meta">
-                      <span className="project-id">#{String(selectedProject + 1).padStart(2, '0')}</span>
-                    </div>
-                  </div>
-                  <p className="project-description">{currentProject.longDescription || currentProject.description}</p>
+                  {project.featured && <span className="slide-badge">Featured</span>}
                 </div>
               </div>
-              
-              <div className="tech-showcase">
-                <h4 className="tech-title">Technologies</h4>
-                <div className="tech-grid">
-                  {currentProject.tech.map((tech, index) => (
-                    <div key={index} className="tech-item">
-                      <TechIcon tech={tech} size={16} />
-                      <span className="tech-name">{tech}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="project-navigation">
-                <button 
-                  onClick={() => setSelectedProject(prev => prev > 0 ? prev - 1 : filteredProjects.length - 1)}
-                  className="nav-btn-compact"
-                >
-                  ← Prev
-                </button>
-                
-                <div className="nav-dots-compact">
-                  {filteredProjects.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleProjectSelect(index)}
-                      className={`nav-dot-compact ${selectedProject === index ? 'active' : ''}`}
-                    />
-                  ))}
-                </div>
-                
-                <button 
-                  onClick={() => setSelectedProject(prev => (prev + 1) % filteredProjects.length)}
-                  className="nav-btn-compact"
-                >
-                  Next →
-                </button>
-              </div>
-            </>
-          )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Navigation arrows */}
+        <button
+          className="carousel-nav prev"
+          onClick={() => swiperRef.current?.slidePrev()}
+          data-cursor
+          aria-label="Previous project"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          className="carousel-nav next"
+          onClick={() => swiperRef.current?.slideNext()}
+          data-cursor
+          aria-label="Next project"
+        >
+          <ChevronRight size={20} />
+        </button>
+
+        {/* Dots */}
+        <div className="carousel-dots">
+          {PROJECTS.map((_, i) => (
+            <button
+              key={i}
+              className={`carousel-dot ${activeIndex === i ? 'active' : ''}`}
+              onClick={() => swiperRef.current?.slideToLoop(i)}
+              aria-label={`Go to project ${i + 1}`}
+            />
+          ))}
         </div>
       </div>
-    </div>
-  );
-};
 
-export default Projects;
+      {/* Active project detail panel */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={active.id}
+          className="project-detail"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className="detail-left">
+            <div className="detail-meta">
+              <span className="detail-year">{active.year}</span>
+              <span className="detail-divider">·</span>
+              <span className="detail-type">{active.subtitle}</span>
+            </div>
+            <h3 className="detail-title">{active.title}</h3>
+            <p className="detail-desc">{active.desc}</p>
+            <div className="detail-tags">
+              {active.tags.map((t, i) => (
+                <span key={i} className="tag">{t}</span>
+              ))}
+            </div>
+          </div>
+          <div className="detail-right">
+            <a href={active.demo} target="_blank" rel="noopener noreferrer" className="detail-btn primary" data-cursor>
+              <ExternalLink size={14} />
+              Live Demo
+            </a>
+            <a href={active.github} target="_blank" rel="noopener noreferrer" className="detail-btn ghost" data-cursor>
+              <Code2 size={14} />
+              Source Code
+            </a>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    </section>
+  );
+}

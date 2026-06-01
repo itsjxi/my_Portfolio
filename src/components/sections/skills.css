@@ -1,80 +1,119 @@
 .skills-section {
-  max-width: 1200px;
-  margin: 0 auto;
+  background: var(--surface-sunken);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .skills-grid {
+  margin-top: 64px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-xl);
-  animation: fadeInUp 0.6s ease-out 0.2s both;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.skill-module {
+  padding: 32px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.2s, transform 0.3s var(--ease);
+}
+
+.skill-module:hover {
+  border-color: var(--bronze);
+  transform: translateY(-3px);
 }
 
 .skill-category {
-  background: var(--gradient-surface);
-  border-radius: var(--border-radius-xl);
-  padding: var(--spacing-xl);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-light);
-  transition: all var(--transition-normal);
-  animation: fadeInUp 0.6s ease-out both;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 
-.skill-category:hover {
-  transform: translateY(-4px);
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.category-title {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-lg);
+.skill-pill {
+  padding: 8px 16px;
+  background: var(--surface-sunken);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.skill-pill:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
+
+/* Philosophy */
+.philosophy {
+  margin-top: 80px;
+  padding: 64px;
+  background: var(--stone);
+  border-radius: 16px;
   text-align: center;
   position: relative;
 }
 
-.category-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  border-radius: 2px;
+.philosophy-mark {
+  font-family: var(--font-serif);
+  font-size: 100px;
+  color: var(--concrete);
+  line-height: 0.5;
+  display: block;
+  margin-bottom: 24px;
 }
 
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  justify-content: center;
+.philosophy-text {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3vw, 28px);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.skill-badge {
-  padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--gradient-primary);
-  color: white;
-  border-radius: var(--border-radius-lg);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  transition: all var(--transition-fast);
-  box-shadow: var(--shadow-sm);
+.philosophy-text em {
+  color: var(--bronze);
+  font-style: normal;
+  font-weight: 600;
 }
 
-.skill-badge:hover {
-  transform: translateY(-3px) scale(1.08);
-  box-shadow: var(--shadow-colored);
+.philosophy-cite {
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
 }
 
 @media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-  
-  .skill-category {
-    padding: var(--spacing-lg);
-  }
+  .skills-grid { margin-top: 40px; grid-template-columns: 1fr; gap: 14px; }
+  .skill-module { padding: 24px; }
+  .skill-module:hover { transform: none; }
+  .skill-category { margin-bottom: 14px; padding-bottom: 10px; }
+  .skill-items { gap: 6px; }
+  .skill-pill { padding: 8px 14px; font-size: 12px; }
+  .skill-pill:hover { transform: none; }
+  .philosophy { margin-top: 48px; padding: 32px 20px; border-radius: 12px; }
+  .philosophy-mark { font-size: 60px; margin-bottom: 16px; }
+  .philosophy-text { font-size: 18px; line-height: 1.5; }
+  .philosophy-cite { margin-top: 16px; font-size: 10px; }
 }

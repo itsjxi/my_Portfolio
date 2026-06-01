@@ -1,203 +1,175 @@
 import React, { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Send, Mail, Link2, Code2, Phone } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import './contact.css';
+import { PERSON } from '../../data/content.js';
+import { useReveal } from '../../hooks/useReveal.js';
+import './Contact.css';
 
-const Contact = () => {
+const links = [
+  { icon: Mail, label: 'Email', value: PERSON.email, href: `mailto:${PERSON.email}` },
+  { icon: Link2, label: 'LinkedIn', value: 'jugal-rajput', href: PERSON.linkedin },
+  { icon: Code2, label: 'GitHub', value: 'itsjxi', href: PERSON.github },
+  { icon: Phone, label: 'Phone', value: PERSON.phone, href: `tel:${PERSON.phone.replace(/\s/g, '')}` },
+];
+
+export default function Contact() {
+  const ref = useReveal();
   const form = useRef();
-  const [formData, setFormData] = useState({
-    user_name: '',
-    user_email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('');
+  const [status, setStatus] = useState('');
+  const [sending, setSending] = useState(false);
+  const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const validateEmail = (email) => {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email) return 'Email is required';
+    if (!re.test(email)) return 'Enter a valid email address';
+    const disposable = ['tempmail.com', 'throwaway.email', 'guerrillamail.com', 'mailinator.com', 'yopmail.com', 'sharklasers.com'];
+    const domain = email.split('@')[1]?.toLowerCase();
+    if (disposable.includes(domain)) return 'Disposable emails not allowed';
+    return '';
   };
 
-  const sendEmail = async (e) => {
+  const validateForm = () => {
+    const formData = new FormData(form.current);
+    const name = formData.get('user_name')?.trim();
+    const email = formData.get('user_email')?.trim();
+    const message = formData.get('message')?.trim();
+    const newErrors = {};
+
+    if (!name || name.length < 2) newErrors.user_name = 'Name must be at least 2 characters';
+    const emailErr = validateEmail(email);
+    if (emailErr) newErrors.user_email = emailErr;
+    if (!message || message.length < 10) newErrors.message = 'Message must be at least 10 characters';
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const result = await emailjs.sendForm(
-        'service_nld2dpm', 
-        'template_bw4bwam', 
-        form.current, 
-        {
-          publicKey: 'GSpf5-RciM723EsF-'
-        }
-      );
-      
-      console.log('Email sent successfully:', result.text);
-      setFormData({ user_name: '', user_email: '', message: '' });
-      setSubmitStatus('success');
-      setTimeout(() => setSubmitStatus(''), 5000);
-    } catch (error) {
-      console.error('Email send failed:', error);
-      setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus(''), 5000);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    if (!validateForm()) return;
 
-  const contactMethods = [
-    {
-      icon: '📧',
-      title: 'Email',
-      value: 'jugalrajput10@gmail.com',
-      link: 'mailto:jugalrajput10@gmail.com',
-      description: 'Send me an email'
-    },
-    {
-      icon: '💼',
-      title: 'LinkedIn',
-      value: 'linkedin.com/in/jugal-rajput-39bbbb144',
-      link: 'https://www.linkedin.com/in/jugal-rajput-39bbbb144/',
-      description: 'Connect professionally'
-    },
-    {
-      icon: '🐙',
-      title: 'GitHub',
-      value: 'github.com/itsjxi',
-      link: 'https://github.com/itsjxi',
-      description: 'Check out my code'
-    },
-    {
-      icon: '📱',
-      title: 'Phone',
-      value: '+91 98972 56740',
-      link: 'tel:+919897256740',
-      description: 'Call me directly'
+    setSending(true);
+    try {
+      await emailjs.sendForm(
+        'service_7qkf3z2',
+        'template_bw4bwam',
+        form.current,
+        'XiDzE6XN55t3B9YUd'
+      );
+      setStatus('success');
+      setErrors({});
+      form.current.reset();
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setStatus('error');
     }
-  ];
+    setSending(false);
+    setTimeout(() => setStatus(''), 5000);
+  };
 
   return (
-    <div className="contact-section">
-      <div className="contact-container">
-        <div className="contact-info-panel">
-          <div className="info-header">
-            <h3 className="info-title">Let's Work Together</h3>
-            <p className="info-description">
-              Ready to bring your ideas to life? I'm here to help you build amazing digital experiences.
-            </p>
-          </div>
-          
-          <div className="contact-methods">
-            {contactMethods.map((method, index) => (
-              <a 
-                key={index}
-                href={method.link}
-                className="contact-method"
-                target={method.link.startsWith('http') ? '_blank' : '_self'}
-                rel="noopener noreferrer"
-              >
-                <div className="method-icon">
-                  <span>{method.icon}</span>
-                </div>
-                <div className="method-content">
-                  <h4 className="method-title">{method.title}</h4>
-                  <p className="method-value">{method.value}</p>
-                  <span className="method-description">{method.description}</span>
-                </div>
-                <div className="method-arrow">
-                  <span>→</span>
-                </div>
-              </a>
-            ))}
-          </div>
-          
-
-        </div>
-        
-        <div className="contact-form-panel">
-          <form ref={form} onSubmit={sendEmail} className="contact-form">
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="user_name" className="form-label">Full Name</label>
-                <input
-                  type="text"
-                  id="user_name"
-                  name="user_name"
-                  value={formData.user_name}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="Enter your full name"
-                  required
-                />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="user_email" className="form-label">Email Address</label>
-                <input
-                  type="email"
-                  id="user_email"
-                  name="user_email"
-                  value={formData.user_email}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="Enter your email address"
-                  required
-                />
-              </div>
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="message" className="form-label">Project Details</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="form-textarea"
-                rows="6"
-                placeholder="Tell me about your project, timeline, and requirements..."
-                required
-              />
-            </div>
-            
-            <button 
-              type="submit" 
-              className="submit-btn"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <>
-                  <span className="loading-spinner"></span>
-                  Sending Message...
-                </>
-              ) : (
-                <>
-                  <span>Send Message</span>
-                  <span className="btn-icon">✈️</span>
-                </>
-              )}
-            </button>
-            
-
-          </form>
-        </div>
+    <section id="contact" className="section contact-section">
+      <div ref={ref} className="reveal-up">
+        <p className="section-eyebrow">Contact</p>
+        <h2 className="section-title">Let's build together</h2>
+        <p className="section-subtitle">
+          Have a project in mind? Let's engineer something meaningful.
+        </p>
       </div>
-      
-      {submitStatus === 'success' && (
-        <div className="status-popup success">
-          <span className="status-icon">✅</span>
-          <span>Message sent successfully!</span>
-        </div>
-      )}
-      {submitStatus === 'error' && (
-        <div className="status-popup error">
-          <span className="status-icon">❌</span>
-          <span>Failed to send message. Please try again.</span>
-        </div>
-      )}
-    </div>
-  );
-};
 
-export default Contact;
+      <div className="contact-grid">
+        {/* Links */}
+        <div className="contact-links">
+          {links.map(({ icon: Icon, label, value, href }, i) => (
+            <motion.a
+              key={label}
+              href={href}
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel="noopener noreferrer"
+              className="contact-link"
+              data-cursor
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+            >
+              <div className="contact-link-icon"><Icon size={18} /></div>
+              <div className="contact-link-body">
+                <span className="contact-link-label">{label}</span>
+                <span className="contact-link-value">{value}</span>
+              </div>
+              <span className="contact-link-arrow">→</span>
+            </motion.a>
+          ))}
+
+          <a href={PERSON.resume} target="_blank" rel="noopener noreferrer" className="resume-btn" data-cursor>
+            ↓ Download Resume
+          </a>
+        </div>
+
+        {/* Form */}
+        <form
+          ref={form}
+          onSubmit={handleSubmit}
+          className="contact-form"
+          noValidate
+        >
+          <div className="form-row">
+            <div className="form-field">
+              <label className="form-label">Name</label>
+              <input
+                type="text"
+                name="user_name"
+                required
+                className={`form-input ${errors.user_name ? 'input-error' : ''}`}
+                placeholder="Your name"
+                onChange={() => setErrors(prev => ({ ...prev, user_name: '' }))}
+              />
+              {errors.user_name && <span className="field-error">{errors.user_name}</span>}
+            </div>
+            <div className="form-field">
+              <label className="form-label">Email</label>
+              <input
+                type="email"
+                name="user_email"
+                required
+                className={`form-input ${errors.user_email ? 'input-error' : ''}`}
+                placeholder="you@email.com"
+                onChange={() => setErrors(prev => ({ ...prev, user_email: '' }))}
+              />
+              {errors.user_email && <span className="field-error">{errors.user_email}</span>}
+            </div>
+          </div>
+          <div className="form-field">
+            <label className="form-label">Message</label>
+            <textarea
+              name="message"
+              required
+              className={`form-textarea ${errors.message ? 'input-error' : ''}`}
+              rows="5"
+              placeholder="Tell me about your project..."
+              onChange={() => setErrors(prev => ({ ...prev, message: '' }))}
+            />
+            {errors.message && <span className="field-error">{errors.message}</span>}
+          </div>
+          <button type="submit" disabled={sending} className="submit-btn" data-cursor>
+            <Send size={14} />
+            {sending ? 'Sending...' : 'Send message'}
+          </button>
+          {status === 'success' && <p className="form-toast success">Message sent successfully!</p>}
+          {status === 'error' && <p className="form-toast error">Failed to send. Try again.</p>}
+        </form>
+      </div>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-left">
+          <span className="footer-brand">Jugal Rajput</span>
+          <span className="footer-sub">Built with precision. Designed for impact.</span>
+        </div>
+      </footer>
+    </section>
+  );
+}
