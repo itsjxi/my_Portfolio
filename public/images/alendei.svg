@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="alendeiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#25D366;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#128C7E;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="18" fill="url(#alendeiGrad)"/>
+  <!-- Chat bubble icon suggesting WhatsApp/messaging platform -->
+  <path d="M50 20C33.43 20 20 31.86 20 46.5c0 8.16 4.16 15.4 10.68 20.16L28 80l14.12-5.08C44 75.6 46.96 76 50 76c16.57 0 30-11.86 30-26.5S66.57 20 50 20z" fill="white" opacity="0.95"/>
+  <circle cx="38" cy="47" r="3.5" fill="url(#alendeiGrad)"/>
+  <circle cx="50" cy="47" r="3.5" fill="url(#alendeiGrad)"/>
+  <circle cx="62" cy="47" r="3.5" fill="url(#alendeiGrad)"/>
+</svg>

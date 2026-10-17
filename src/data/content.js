@@ -70,6 +70,43 @@ export const EXPERIENCE = [
     ],
   },
   {
+    id: 'alendei',
+    company: 'Alendei Platforms Pvt. Ltd.',
+    role: 'Software Engineer — API Integration',
+    type: 'Full-time',
+    period: 'Nov 2023 – Mar 2024',
+    logo: '/images/alendei.svg',
+    color: '#25D366',
+    summary: 'Integrated APIs and configured campaign flows for a WhatsApp-based customer engagement platform, bridging business requirements into targeted communication workflows.',
+    stack: ['WhatsApp API', 'REST APIs', 'HTML Email', 'CSS', 'Campaign Automation'],
+    work: [
+      {
+        title: 'WhatsApp Campaign API Integration',
+        desc: 'Integrated business APIs into a WhatsApp-based campaign platform, translating complex business requirements into configurable customer engagement workflows.',
+        metric: 'End-to-end automation',
+        tags: ['WhatsApp API', 'REST APIs', 'Campaign Flows'],
+      },
+      {
+        title: 'Campaign Flow Configuration',
+        desc: 'Configured campaign flows with conditions, triggers, and messaging logic for targeted customer communication across multiple client accounts.',
+        metric: 'Multi-client deployments',
+        tags: ['Workflow Automation', 'Triggers', 'Messaging Logic'],
+      },
+      {
+        title: 'Email Campaign Workflows & Templates',
+        desc: 'Built responsive HTML email templates and configured email campaign workflows tailored to individual customer specifications.',
+        metric: 'Responsive across clients',
+        tags: ['HTML Email', 'CSS', 'Email Campaigns'],
+      },
+      {
+        title: 'API Troubleshooting & Debugging',
+        desc: 'Diagnosed and resolved API integration and campaign-flow issues, collaborating with internal teams to identify root causes and ship fixes quickly.',
+        metric: 'Reduced integration errors',
+        tags: ['Debugging', 'API Integration', 'Cross-team Collaboration'],
+      },
+    ],
+  },
+  {
     id: 'aarti',
     company: 'Aarti Industries',
     role: 'Executive — Digitalization',
