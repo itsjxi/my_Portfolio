@@ -7,7 +7,7 @@ export const PERSON = {
   phone: '+91 98972 56740',
   github: 'https://github.com/itsjxi',
   linkedin: 'https://www.linkedin.com/in/jugal-rajput-39bbbb144/',
-  resume: '/images/jugal-rajput-resume.pdf',
+  resume: '/images/JUGAL_RAJPUT__Resume.pdf',
   tagline: 'I engineer interfaces that think.',
   bio: 'Frontend engineer with 4+ years building AI-powered marketing tools, real-time dashboards, and design systems at scale. Currently at WebEngage, where I ship products used by thousands of enterprise marketers daily.',
 };
